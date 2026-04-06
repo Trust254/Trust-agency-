@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Agency - Secure Jobs Abroad</title>
+  <meta name="description" content="Trust Agency helps you secure real jobs abroad safely, with guidance, verification, and protection against scams.">
+  <meta name="keywords" content="jobs abroad, Middle East jobs, employment, recruitment, safe work abroad">
+  <meta name="author" content="Trust Agency">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Hero Section */
+    .hero {
+      height: 80vh;
+      background: url('https://images.unsplash.com/photo-1601597116005-5f7e3d5e0e7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGVtcGxveW1lbnR8ZW58MHx8fHwxNjgwODU1OTYw&ixlib=rb-4.0.3&q=80&w=1600') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 30px; }
+    .btn-hero {
+      padding: 15px 35px;
+      background: #27ae60;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-hero:hover { background: #1e8449; }
+
+    /* Navigation */
+    nav { background: #082c4a; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+    nav a { color: white; margin: 0 20px; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #27ae60; }
+
+    /* Sections */
+    section { padding: 60px 20px; }
+    .container { max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    section h2 { color: #0a3d62; margin-bottom: 20px; font-size: 2rem; }
+    section p, section li { margin-bottom: 15px; font-size: 1rem; }
+    ul { list-style: disc inside; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #0a3d62; color: white; margin-top: 40px; font-size: 0.9rem; }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      nav a { display: block; margin: 10px 0; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      section { padding: 40px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Find Your Dream Job Abroad Safely</h1>
+    <p>Connecting you with verified recruiters and guiding you every step of the way.</p>
+    <a class="btn-hero" href="#apply" aria-label="Apply to Trust Agency jobs">Apply Now</a>
+  </div>
+</div>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#apply">Apply</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>Trust Agency is committed to helping individuals find genuine job opportunities abroad, especially in the Middle East. We guide you through safe recruitment processes, help you identify legitimate companies, and prepare you for interviews.</p>
+    <p>Our mission is to protect you from scams and ensure you secure well-paying jobs with trusted employers.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Connecting you with verified job agents</li>
+      <li>Guidance on working abroad (Middle East focus)</li>
+      <li>Interview preparation support</li>
+      <li>Verification of companies</li>
+      <li>Protection against scams</li>
+    </ul>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <h2>Apply Now</h2>
+    <p>Fill in your details using the application form below:</p>
+    <a class="btn-hero" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZZ__MxUREY5UjkxQjJVVlJPNUtIV1k5UjNPWDdKVC4u" target="_blank" aria-label="Apply to Trust Agency jobs">Apply Here</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:trustagency@email.com">trustagency@email.com</a></p>
+    <p>Phone/WhatsApp: +254 XXX XXX XXX</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Trust Agency. All rights reserved.</p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('nav a, .btn-hero').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
