@@ -1,25 +1,32 @@
 # TradePilot AI
 
-A mobile-first trading terminal MVP with Supabase authentication, per-user watchlists, virtual paper orders, a transparent technical-indicator strategy engine, and PWA installation support.
+Live deployment: https://tradepilot-ai-4q8e.onrender.com
 
-## Current functionality
-- Supabase email/password sign-up and sign-in.
-- User-owned watchlists and paper-trading records protected by Row Level Security.
-- Public Binance hourly candle feed for BTC, ETH, SOL and BNB.
-- Explainable EMA(9/21), RSI(14), and momentum signal (BUY/SELL/HOLD).
-- Assistant chat explains the currently computed signal and basic risk concepts.
-- Paper orders only. No real-money execution or broker connectivity.
-- PWA manifest, service worker and app icon.
+A mobile-first trading terminal deployed on Render and backed by a dedicated Supabase project.
 
-## Configuration
-The frontend uses the public Supabase publishable key. It is safe to include in browser code when RLS is enabled. Never add a Supabase service-role/secret key to this repository.
+## Included
+- Supabase email/password authentication.
+- User-owned watchlists with row-level security.
+- Live public Binance candle feed for BTC, ETH, SOL and BNB (refreshes every 60 seconds).
+- Transparent EMA(9/21), RSI(14), and momentum strategy signals.
+- Context-aware rule-based assistant that explains signals and basic risk concepts.
+- Paper trading with $10,000 virtual starting cash.
+- Atomic database RPC for paper orders, including cash and position checks; direct client updates to balances and direct order inserts are blocked.
+- PWA manifest, service worker and app icon for Android installation.
 
-Project URL: `https://fdqxywntsvejokucfvcm.supabase.co`
+## Backend
+- Supabase project: `tradepilot-ai`
+- Project URL: `https://fdqxywntsvejokucfvcm.supabase.co`
+- Project ref: `fdqxywntsvejokucfvcm`
+- Public publishable key is configured in the frontend. Never put a Supabase service-role key in browser code.
 
-Publishable key is already configured in `index.html`.
+## Important scope and safety
+This deployed version is a working market-monitoring and paper-trading application. The strategy engine is deterministic technical analysis, not a trained predictive model or a connected generative AI model. The assistant is rule-based and does not call an LLM. The market feed currently covers selected crypto pairs only. It does not connect to a broker, route live orders, or handle deposits/withdrawals. No real-money trading is enabled. Do not represent signals as guaranteed or personalized financial advice.
+
+To add a true generative AI assistant, configure a server-side model-provider API key as a secret in a secure backend/edge function. To enable real-money execution, integrate a regulated broker API with account authorization, order validation, audit logs, jurisdiction checks and risk limits. Never expose provider or broker secrets in this frontend.
 
 ## Run locally
-Serve this directory over HTTP (not `file://`), for example:
+Serve this directory over HTTP, for example:
 
 ```bash
 python3 -m http.server 8080
@@ -27,11 +34,8 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080`.
 
-## Deploy
-Publish the repository as a Render Static Site with build command `echo "Static site ready"` and publish directory `.`. Connect the repository in Render, then deploy. After deployment, open the HTTPS URL in Chrome and choose **Install app** or **Add to Home screen**.
+## Install on Android
+Open the live URL in Chrome, open the three-dot menu, then choose **Install app** or **Add to Home screen**.
 
-## Important limitations
-The strategy engine is an explainable technical-indicator model, not a trained predictive AI model. The chat assistant currently uses local deterministic explanations; connect a secured server-side AI provider before advertising generative AI. Market feed availability depends on Binance API access in the visitor's region. Other asset classes and broker integrations are not connected yet. No live trading is enabled.
-
-## Security
-All public tables have RLS. User data policies scope access to `auth.uid()`. The `ai_signals` table is authenticated-read-only; only trusted backend/service-role processes should write signals. Never expose service credentials in browser code.
+## Deployment source
+The Render static site deploys from branch `tradepilot-ai-deploy`. The repository's original `main` branch was not changed.
